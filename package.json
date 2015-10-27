@@ -1,0 +1,25 @@
+{
+  "name": "simpleserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "chip": "0.0.5",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "connect": "^3.4.0",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "serve-index": "^1.7.2",
+    "serve-static": "^1.10.0"
+  },
+  "bin": {
+    "simpleserver": "simpleserver.js"
+  }
+}
