@@ -1,22 +1,46 @@
 'use strict';
 
-var connect = require('connect');
-var serveStatic = require('serve-static');
-var serverIndex = require('serve-index');
-var pathUtil = require('path');
-var http = require('http');
-var help = require('./help');
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 
-var myserver = {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _connect = require('connect');
+
+var _connect2 = _interopRequireDefault(_connect);
+
+var _serveStatic = require('serve-static');
+
+var _serveStatic2 = _interopRequireDefault(_serveStatic);
+
+var _serveIndex = require('serve-index');
+
+var _serveIndex2 = _interopRequireDefault(_serveIndex);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _http = require('http');
+
+var _http2 = _interopRequireDefault(_http);
+
+var _help = require('./help');
+
+var _help2 = _interopRequireDefault(_help);
+
+exports['default'] = {
   listen: function listen(port, publicPath, fn) {
     port = port || 8228; // default 8228
-    publicPath = pathUtil.resolve(publicPath || '.'); // serve current directory by default.
+    publicPath = _path2['default'].resolve(publicPath || '.'); // serve current directory by default.
+
     // instantiate middleware
-    var app = connect().use(serverIndex(publicPath)).use(serveStatic(publicPath));
+    var app = (0, _connect2['default'])().use((0, _serveIndex2['default'])(publicPath)).use((0, _serveStatic2['default'])(publicPath));
+
     // Instantiate server
-    var server = http.createServer(app).listen(port, fn);
-    help.log("Server running at port " + port + " ...");
+    var server = _http2['default'].createServer(app).listen(port, fn);
+    _help2['default'].log("Server running at port " + port + " ...");
   }
 };
-
-module.exports = myserver;
+module.exports = exports['default'];

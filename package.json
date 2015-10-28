@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
+    "watch": "babel -w src --out-dir dist",
     "prepublish": "npm run build"
   },
   "author": "",
